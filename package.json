@@ -1,0 +1,29 @@
+{
+  "name": "talk-on-maybes",
+  "version": "1.0.0",
+  "description": "Code for a talk on the Maybe monad in JavaScript / TypeScript - inspired by Elm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwulf/talk-on-maybes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwulf/talk-on-maybes/issues"
+  },
+  "homepage": "https://github.com/jwulf/talk-on-maybes#readme",
+  "devDependencies": {
+    "tsmonad": "^0.7.2",
+    "typescript": "2.4"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.15",
+    "@types/request-promise": "^4.1.36",
+    "express": "^4.15.3",
+    "request-promise": "^4.2.1"
+  }
+}
