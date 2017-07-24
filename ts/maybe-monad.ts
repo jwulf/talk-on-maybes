@@ -1,13 +1,11 @@
 import * as rp from 'request-promise';
 import {Maybe} from 'tsmonad';
 
-interface name {
-    first: string;
-    last: string;
-}
-
-interface RESTAPI {
-    name: name;
+interface RESTAPIResponse {
+    name: {
+        first: string;
+        last: string;
+    }
 }
 
 const url = {
@@ -16,18 +14,18 @@ const url = {
 };
 
 rp(url.yes)
-    .then((body: RESTAPI) => console.log('/yes', body));
+    .then((body: RESTAPIResponse) => console.log('/yes', body));
 
 rp(url.no)
-    .then((body: RESTAPI) => console.log('/no', body));
+    .then((body: RESTAPIResponse) => console.log('/no', body));
 
 /* First-level dereference */
 
 rp(url.yes)
-    .then((body: RESTAPI) => console.log('/yes', body.name));
+    .then((body: RESTAPIResponse) => console.log('/yes', body.name));
 
 rp(url.no)
-.then((body: RESTAPI) => console.log('/no', body.name));
+.then((body: RESTAPIResponse) => console.log('/no', body.name));
 
 /* Mis-spelled property */
 
@@ -40,10 +38,10 @@ rp(url.no)
 /* Run-time exception */
 
 rp(url.yes)
-    .then((body: RESTAPI) => console.log('/yes', getFirstName(body)));
+    .then((body: RESTAPIResponse) => console.log('/yes', getFirstName(body)));
 
 rp(url.no)
-.then((body:RESTAPI) => console.log('/no', getFirstName(body))
+.then((body:RESTAPIResponse) => console.log('/no', getFirstName(body))
 );
 
 
