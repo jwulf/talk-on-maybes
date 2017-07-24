@@ -80,5 +80,6 @@ function getFirstName(body) {
         });
 
     if (hasFirstName) return body.name.first;
+
     return undefined;
 }
